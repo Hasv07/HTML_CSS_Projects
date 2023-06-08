@@ -216,6 +216,46 @@ i.inner-setting:hover{
   color: #0275d8;
 }
 
+
+/* Offer css section */
+
+.offer {
+  text-align: center;
+  margin-top: 50px;
+  padding-top: 120px;
+}
+.off_comp_cont{
+  width: 70%;
+  margin: auto;
+}
+.off_comp{
+  width: 33%;
+  padding: 3%;
+}
+.offer h3,h4{
+  font-weight: 400;
+  color: rgba(48, 48, 48, 1);
+  font-size: 30px;
+  margin:20px 0;
+}
+.offer p{
+  font-size:17px;
+  color: RGB(136, 136, 136);
+  margin:20px 0;
+}
+ .offer h4{
+  font-size: 22px;
+
+}
+
+.offer img{
+  width: 100%;
+}
+
+
+
+
+
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 950px) {
  /*nav section css*/
@@ -239,7 +279,7 @@ i.inner-setting:hover{
   background-color: white;
   opacity: 0;
 
-  visibility: hidden;
+  display: hidden;
   transition: 0.6s all;
 
  }
@@ -309,6 +349,12 @@ transform:translateY(-50%);
   }
   .abt_comp .l,.r{
     float:none;
+  }
+  .off_comp{
+    width: 100%;
+  }
+  .off_comp_cont .l{
+    float: none;
   }
 }
 
