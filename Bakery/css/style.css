@@ -88,9 +88,9 @@ height
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
     url("../imgs/drew-coffman-1872.jpg");
   background-size: cover;
-  background-repeat: center;
-  background-position: 50% 50%;
-  height: 800px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  min-height: 800px;
   overflow: auto;
 }
 .home .homeContent {
@@ -221,8 +221,7 @@ i.inner-setting:hover{
 
 .offer {
   text-align: center;
-  margin-top: 50px;
-  padding-top: 120px;
+  margin-top: 70px;
 }
 .off_comp_cont{
   width: 70%;
@@ -279,7 +278,7 @@ i.inner-setting:hover{
   background-color: white;
   opacity: 0;
 
-  display: hidden;
+  visibility: hidden;
   transition: 0.6s all;
 
  }
@@ -349,6 +348,9 @@ transform:translateY(-50%);
   }
   .abt_comp .l,.r{
     float:none;
+  }
+  .offer{
+    padding-top:0px;
   }
   .off_comp{
     width: 100%;
