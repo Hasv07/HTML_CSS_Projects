@@ -1,1 +1,208 @@
+/* general css */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+:root {
+  font-family: "Roboto", sans-serif;
+}
+
+a,
+a:visited,
+a:hover,
+a:active {
+  color: inherit;
+}
+
+/*font size classes*/
+.f-24 {
+  font-size: 24px;
+}
+.f-16 {
+  font-size: 16px;
+}
+.f-70 {
+  font-size: 70px;
+}
+.f-26 {
+  font-size: 26px;
+}
+
+/* navbar css */
+
+.navbar {
+  background-color: black;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1rem 0rem;
+
+  & .logo {
+    & a {
+      color: rgb(255, 48, 91);
+      font-weight: 800;
+      text-decoration: underline 3px solid rgb(255, 48, 91);
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+  .nav_menu {
+    display: flex;
+
+    & a {
+      padding: 0px 10px;
+      font-weight: 300;
+      color: white;
+      transition: 0.5s color;
+      &.active {
+        color: rgb(255, 48, 91);
+      }
+      &:hover {
+        color: rgb(255, 48, 91);
+      }
+    }
+  }
+}
+
+/* home section css */
+.home_container {
+  background-image: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.8),
+      rgba(0, 0, 0, 0.8)
+    ),
+    url(../Imgs/bg.jpg);
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  & h1,
+  h2,
+  h3 {
+    padding: 5px;
+  }
+  & h1 {
+    color: rgb(255, 48, 91);
+  }
+  & h3 {
+    font-weight: 600;
+  }
+  & h4 {
+
+    font-weight: 300;
+   
+    & .dev_anim {
+      vertical-align: middle;
+      position: relative;
+      
+      & b{
+        display: inline-block;
+        text-align: left;
+        animation: widthChange 2s infinite alternate;
+        overflow: hidden;
+        font-weight: inherit;
+      &::after{
+        content: "Developer";
+        animation: titleChange 4s infinite alternate;
+      }
+      }
+
+    }
+
+    & .dev_anim::after {
+      content: "";
+      width: 2px;
+      height: 30px;
+      background-color: white;
+      position: absolute;
+      left: 0;
+      
+      transform: translateX(130px);
+      animation: cursorChange 2s infinite alternate;
+
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* animation */
+/* 1-home section */
+@keyframes widthChange {
+  from  {
+      width: 130px;
+  }
  
+  to {
+width: 0px;  
+}
+
+}
+@keyframes cursorChange {
+  from {
+    transform: translateX(130px);
+  }
+
+  to {
+    transform: translateX(0px);
+  }
+
+}
+@keyframes titleChange {
+  from {
+    content: "Developer";
+  }
+
+  to {
+    content: "Designer";
+  }
+
+}
