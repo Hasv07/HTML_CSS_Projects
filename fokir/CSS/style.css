@@ -5,6 +5,7 @@
   margin: 0;
   box-sizing: border-box;
   text-decoration: none;
+  list-style: none;
 }
 :root {
   font-family: "Roboto", sans-serif;
@@ -37,6 +38,7 @@ a:active {
   background-color: black;
   width: 100%;
   position: fixed;
+  z-index: 99999;
   top: 0;
   left: 0;
 
@@ -103,25 +105,23 @@ a:active {
     font-weight: 600;
   }
   & h4 {
-
     font-weight: 300;
-   
+
     & .dev_anim {
       vertical-align: middle;
       position: relative;
-      
-      & b{
+
+      & b {
         display: inline-block;
         text-align: left;
         animation: widthChange 2s infinite alternate;
         overflow: hidden;
         font-weight: inherit;
-      &::after{
-        content: "Developer";
-        animation: titleChange 4s infinite alternate;
+        &::after {
+          content: "Developer";
+          animation: titleChange 4s infinite alternate;
+        }
       }
-      }
-
     }
 
     & .dev_anim::after {
@@ -131,60 +131,189 @@ a:active {
       background-color: white;
       position: absolute;
       left: 0;
-      
+
       transform: translateX(130px);
       animation: cursorChange 2s infinite alternate;
-
     }
   }
 }
 
+/* about section css */
+
+.about {
+  display: flex;
+  justify-content: center;
+  padding: 5rem;
+
+  /* profile container css */
+
+  & .prof_img_container {
+    min-width: 360px;
+    width: 20%;
 
 
+    border-radius: 1%;
 
+    border: 7px solid rgba(85, 85, 85, 1);
 
+    & .img_cont {
+      transform: translate(5%, 5%);
 
+      & img {
+        width: 100%;
+        border-radius: 1%;
+      }
 
+      &:hover .img_layer {
+        visibility: visible;
+        height: 100%;
+        opacity: 0.5;
+      }
 
+      & .img_layer {
+        width: 100%;
 
+        background-color: rgba(0, 0, 0);
+        opacity: 0;
+        height: 0px;
+        visibility: hidden;
+        position: absolute;
+        bottom: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
+        transition: 1s all;
+        & li {
+          margin-right: 1rem;
+        }
+        & a {
+          font-size: 1.2rem;
+          color: white;
+        }
+        & a:hover {
+          color: rgb(255, 48, 91);
+        }
+      }
+    }
+  }
+  & .profile_content {
+    width: 50%;
+    max-width: 35.75rem;
+    margin-left: 4%;
+    line-height: 25px;
 
+    & h2 {
+      font-family: "Source Sans 3", sans-serif;
+      font-size: 34px;
+      font-weight: 600;
+      color: rgba(51, 51, 51, 1);
+      margin-bottom: 1.25rem;
+      text-align: start;
+      position: relative;
+      padding-left: .625rem;
 
+      &::before {
+        content: "";
 
+        width: 5px;
+        background-color: #ff305b;
+        height: 100%;
+        position: absolute;
+        left: 0px;
+      }
+    }
+  }
+  & p {
+    color: rgba(85, 85, 85, 1);
+    font-weight: 400;
+    padding-bottom: 1.5625rem;
+    margin-bottom: 0.625rem;
 
+    border-bottom: 1px dashed #999999;
+  }
+  & .contact_info {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    & li {
+      color: rgba(85, 85, 85, 1);
 
+      width: 50%;
+      padding: 0.4rem;
+    }
+  }
+  & .btns {
+    margin-top: 0.625rem;
+    & .btn {
+      height: 50px;
+      color: white;
+      background-color: #ff305b;
+      border: none;
+      padding: 1rem;
+      font-size: 16px;
+      border-radius: 4px;
+      margin-right: 0.625rem;
+      cursor: pointer;
 
+      &:hover {
+        background-color: red;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 1100px) {
+  .about {
+    padding: 4rem;
+    & .prof_img_container {
+      width: 55%;
+      border: none;
+      & .img_cont {
+        transform: translate(0, 0);
 
+      }
+    }
 
+    & .profile_content {
+      width: 60%;
+      font-size: 14px;
+    }
+  }
+}
+/* responsive css */
+@media only screen and (max-width: 850px) {
+  .about {
+    flex-direction: column;
+    align-items: center;
 
+    & .prof_img_container {
+      width: 80%;
+      margin-bottom: 1.25rem;
+      & .img_cont {
+        transform: translate(0, 0);
+      }
+    }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    & .profile_content {
+      font-size: 18px;
+      width: 80%;
+      & li {
+        width: 100%;
+      }
+    }
+  }
+}
 
 /* animation */
 /* 1-home section */
 @keyframes widthChange {
-  from  {
-      width: 130px;
+  from {
+    width: 130px;
   }
- 
-  to {
-width: 0px;  
-}
 
+  to {
+    width: 0px;
+  }
 }
 @keyframes cursorChange {
   from {
@@ -194,7 +323,6 @@ width: 0px;
   to {
     transform: translateX(0px);
   }
-
 }
 @keyframes titleChange {
   from {
@@ -204,5 +332,4 @@ width: 0px;
   to {
     content: "Designer";
   }
-
 }
