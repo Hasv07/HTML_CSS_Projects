@@ -200,6 +200,7 @@ a:active {
   & .profile_content {
     width: 50%;
     max-width: 35.75rem;
+    min-width: 22.5rem;
     margin-left: 4%;
     line-height: 25px;
 
