@@ -18,6 +18,31 @@ a:active {
   color: inherit;
 }
 
+.section_header {
+  font-family: "Source Sans 3", sans-serif;
+  font-size: 40px;
+  font-weight: 800;
+  margin-bottom: 3.125rem;
+  position: relative;
+  &::before {
+    content: "";
+    height: 1rem;
+    width: 40%;
+    position: absolute;
+    top: 100%;
+    left: 30%;
+    border-top: 1px solid #ff305b;
+    border-bottom: 1px solid #ff305b;
+  }
+  &::after {
+    content: "";
+    width: 80%;
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    left: 10%;
+    border-top: 1px solid #ff305b;
+  }
+}
 /*font size classes*/
 .f-24 {
   font-size: 24px;
@@ -151,7 +176,6 @@ a:active {
     min-width: 360px;
     width: 20%;
 
-
     border-radius: 1%;
 
     border: 7px solid rgba(85, 85, 85, 1);
@@ -212,7 +236,7 @@ a:active {
       margin-bottom: 1.25rem;
       text-align: start;
       position: relative;
-      padding-left: .625rem;
+      padding-left: 0.625rem;
 
       &::before {
         content: "";
@@ -263,6 +287,61 @@ a:active {
     }
   }
 }
+/* service section css */
+.service_section {
+  background-color: rgb(241, 241, 241);
+
+  & .services {
+    min-width: 80%;
+    margin: auto;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    & .service_content {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+
+
+      & .service_elem {
+        text-align: center;
+        padding: 1.2rem;
+        width: 25%;
+        max-width: 20rem;
+
+        & i {
+          color: #ff305b;
+          font-size: x-large;
+          margin-bottom: 0.625rem;
+        }
+
+        & h3 {
+          font-size: 24px;
+          font-weight: 500;
+          color: #333333;
+          margin-bottom: 0.625rem;
+        }
+        & p {
+          color: #999999;
+          font-size: 16px;
+          margin-bottom: 0.625rem;
+        }
+        &:hover {
+          background-color: white;
+          transition: 0.3s all ease-in-out;
+          box-shadow: 0px 5px 10px 0px rgb(182, 181, 181);
+          & i {
+            font-size: xx-large;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* responsive css */
+
 @media only screen and (max-width: 1100px) {
   .about {
     padding: 4rem;
@@ -271,7 +350,6 @@ a:active {
       border: none;
       & .img_cont {
         transform: translate(0, 0);
-
       }
     }
 
@@ -280,9 +358,18 @@ a:active {
       font-size: 14px;
     }
   }
+  /* service section */
+  .service_section {
+    &.service_section {
+      & .service_content {
+        & .service_elem {
+          width: 50%;
+        }
+      }
+    }
+  }
 }
-/* responsive css */
-@media only screen and (max-width: 850px) {
+@media only screen and (max-width: 720px) {
   .about {
     flex-direction: column;
     align-items: center;
@@ -300,6 +387,18 @@ a:active {
       width: 80%;
       & li {
         width: 100%;
+      }
+    }
+  }
+  /* service section css */
+  .service_section {
+    & .services {
+      width: 90%;
+      & .service_content {
+        & .service_elem {
+          max-width: 700px;
+          width: 100%;
+        }
       }
     }
   }
