@@ -113,29 +113,69 @@
     background-color: black !important;
   }
 }
-
+/* services css */
 #Services {
-  background-color:  rgba(244, 244, 244, 1);;
+  background-color: rgba(244, 244, 244, 1);
   & .srv_card {
     box-shadow: 0px 10px 30px -8px rgba(0, 0, 0, 0.1);
     & i {
       font-size: 30px;
       background-color: rgba(247, 247, 247, 1);
-      transition:  0.3s;
+      transition: 0.3s;
 
       border-radius: 50%;
-      &:hover{
+      &:hover {
         color: white;
         background-color: black;
       }
-      
     }
-    & p{
-      color:#748182;
+    & p {
+      color: #748182;
     }
   }
 }
+/* Testimonials CSS */
+#Testimonials {
+  & .slider_circle{
+    width: 1rem;
+    height: 1rem;
+  }
+  & .tst_pic {
+    width: 120px;
+  }
+  & .carousel-item {
+    &.active {
+      border: none;
+    }
+    & > *{
+      margin-top: 2rem;
+      margin-bottom: 0rem;
+    }
+    & .tst_content{
+      font-family:poppins;
 
+      & p:nth-child(1){
+        line-height: 1.6;
+        font-size: 1.25rem;
+        color: #748182;
+      }
+      & p:nth-child(2){
+        line-height: 1.6;
+        font-size: 1.25rem;
+        margin-bottom: 0.2rem;
+        font-weight: 600;
+        color: #343434;
+      }
+      & p:nth-child(3){
+        line-height: 1.6;
+        font-size: 1.25rem;
+        color: #748182;
+
+      }
+    }
+  }
+  }
+ 
 /*animation css*/
 
 @keyframes cursorChange {
